@@ -18,18 +18,18 @@ use App\Models\Follow;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route::get('/', function () {
 //     return 'hello';
 // });
 
-Route::get('/test', function () {
-    $user = User::All(); 
+// Route::get('/test', function () {
+//     $user = User::All(); 
 
 
-    return response()->json([$user, 'success' => true], 200);
+//     return response()->json([$user, 'success' => true], 200);
 
-});
+// });

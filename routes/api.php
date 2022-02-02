@@ -38,4 +38,6 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('users', GetAllUsers::class);
 });
 
+Route::get('users', GetAllUsers::class);
+
 
