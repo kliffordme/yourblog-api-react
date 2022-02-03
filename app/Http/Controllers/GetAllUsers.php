@@ -17,7 +17,7 @@ class GetAllUsers extends Controller
      */
     public function __invoke(Request $request)
     {
-        $user = User::All()->leftJoin('followers', 'users.id', '=' , 'followers.follower');
+        $user = User::All()->leftJoin('followers', 'users.id', '=' , 'followers.follower')->get();
 
         return response()->json(['users' => $user, 'success' => true], 200);
     }
