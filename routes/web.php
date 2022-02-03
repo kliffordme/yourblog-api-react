@@ -22,9 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/', function () {
-//     return 'hello';
-// });
+Route::get('/test', function () {
+    return 'hello';
+});
 
 // Route::get('/test', function () {
 //     $user = User::All(); 
