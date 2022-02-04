@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Follower;
+use App\Models\Follow;
 
 
 class GetAllUsers extends Controller
@@ -17,7 +17,8 @@ class GetAllUsers extends Controller
      */
     public function __invoke(Request $request)
     {
-        $user = User::All()->leftJoin('followers', 'users.id', '=' , 'followers.follower')->get();
+        // $user = User::leftJoin('followers', 'users.id', '=' , 'followers.follower')->get();
+        $user = User::with('follower')->get();
 
         return response()->json(['users' => $user, 'success' => true], 200);
     }
